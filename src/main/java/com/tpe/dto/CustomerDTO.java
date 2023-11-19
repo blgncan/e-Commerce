@@ -2,14 +2,18 @@ package com.tpe.dto;
 
 import com.tpe.domain.Customer;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
+
 @Getter
 @Setter
-
+@NoArgsConstructor
 public class CustomerDTO {
+
     @NotBlank(message = "Name is required!")
     private String name;
 
@@ -28,5 +32,10 @@ public class CustomerDTO {
         this.lastName = customer.getLastName();
         this.email = customer.getEmail();
         this.phone = customer.getPhone();
+    }
+
+
+    public CustomerDTO(List<Customer> foundCustomer) {
+
     }
 }

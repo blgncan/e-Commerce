@@ -25,7 +25,7 @@ public class Customer {
     private String name;
 
     @NotBlank(message = "Lastname is required!")
-    private String lastName;
+    private String lastName;//LastName
 
     @NotBlank(message = "Email is required!")
     @Column(unique = true)

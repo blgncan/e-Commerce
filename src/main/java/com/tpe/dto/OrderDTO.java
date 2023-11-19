@@ -1,5 +1,7 @@
-package com.tpe.domain;
+package com.tpe.dto;
 
+import com.tpe.domain.Customer;
+import com.tpe.domain.Product;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,15 +10,12 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-//3
-@Entity
 @Getter
 @Setter
-public class OrderItem {
+@NoArgsConstructor
+public class OrderDTO {//gerek yok
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
+
     private Long id;
 
     @NotNull(message = "Quantity can not be null")
@@ -43,5 +42,4 @@ public class OrderItem {
 
         this.totalPrice=this.product.getPrice()*this.quantity;
     }
-
 }
